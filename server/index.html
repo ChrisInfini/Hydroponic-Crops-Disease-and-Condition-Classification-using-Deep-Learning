@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponic Plant Disease AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="header">
+    <div class="brand">
+        <div class="brand-icon">🌱</div>
+        <div>
+            <h2>HYDROPONIC AI</h2>
+            <p>Plant Intelligence System</p>
+        </div>
+    </div>
+    <div class="server-status" id="serverStatus">
+        <span class="status-dot"></span>
+        Checking server...
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <p class="eyebrow">AI-POWERED PLANT ANALYSIS</p>
+        <h1>Plant Disease<br><span>Detection System</span></h1>
+        <p class="hero-description">
+            Upload a plant leaf image to identify the crop
+            and classify its condition using MobileNetV2.
+        </p>
+    </section>
+
+    <section class="workspace">
+        <div class="upload-card">
+            <div class="section-heading">
+                <h2>Upload Plant Image</h2>
+                <p>Select a clear photograph of a plant leaf.</p>
+            </div>
+
+            <label class="drop-area" id="dropArea">
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/jpeg,image/png,image/webp,image/bmp"
+                    hidden
+                >
+                <div id="uploadPlaceholder">
+                    <div class="upload-icon">📷</div>
+                    <h3>Drop your image here</h3>
+                    <p>or click to browse your device</p>
+                    <span>JPG · PNG · WEBP · BMP · Maximum 10 MB</span>
+                </div>
+                <img
+                    id="imagePreview"
+                    class="image-preview hidden"
+                    alt="Uploaded plant preview"
+                >
+            </label>
+
+            <button id="predictButton" class="predict-button" disabled>
+                <span id="buttonText">Analyze Plant Image</span>
+            </button>
+            <p id="errorMessage" class="error-message hidden"></p>
+        </div>
+
+        <div class="result-card">
+            <div class="section-heading">
+                <h2>Prediction Results</h2>
+                <p>AI-generated classification from your image.</p>
+            </div>
+
+            <div id="emptyResult" class="empty-result">
+                <div class="result-icon">🔬</div>
+                <h3>Awaiting Image</h3>
+                <p>Your prediction will appear here.</p>
+            </div>
+
+            <div id="predictionResult" class="hidden">
+                <div class="result-main">
+                    <div>
+                        <span class="result-label">IDENTIFIED PLANT</span>
+                        <h2 id="plantName">--</h2>
+                    </div>
+                    <div>
+                        <span class="result-label">PREDICTED CONDITION</span>
+                        <h3 id="conditionName">--</h3>
+                    </div>
+                </div>
+
+                <div class="confidence-box">
+                    <div class="confidence-heading">
+                        <span>Prediction confidence</span>
+                        <strong id="confidenceValue">0%</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div id="confidenceBar" class="progress-fill"></div>
+                    </div>
+                    <p id="warningMessage"></p>
+                </div>
+
+                <div class="top-predictions">
+                    <h3>Top 5 Predictions</h3>
+                    <div id="topPredictions"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="information">
+        <h3>About this system</h3>
+        <p>
+            This application uses your trained MobileNetV2 model
+            to classify uploaded images into its trained classes.
+            Results are model predictions, not confirmed plant
+            disease diagnoses.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>Hydroponic Plant Disease AI · MobileNetV2</p>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
