@@ -1,8 +1,3 @@
-# ============================================================
-# HYDROPONIC PLANT DISEASE & CONDITION CLASSIFICATION
-# FINAL MODEL EVALUATION
-# ============================================================
-
 import json
 from pathlib import Path
 from collections import defaultdict
@@ -19,16 +14,8 @@ from sklearn.metrics import (
     precision_recall_fscore_support
 )
 
-# ------------------------------------------------------------
-# 1. GOOGLE DRIVE
-# ------------------------------------------------------------
-
 from google.colab import drive
 drive.mount("/content/gdrive")
-
-# ------------------------------------------------------------
-# 2. PATH CONFIGURATION
-# ------------------------------------------------------------
 
 PROJECT_DIR = Path(
     "/content/gdrive/MyDrive/Hydroponic_Plant_Disease_AI"
@@ -45,19 +32,11 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 IMG_SIZE = (160, 160)
 BATCH_SIZE = 16
 
-# ------------------------------------------------------------
-# 3. CHECK REQUIRED PATHS
-# ------------------------------------------------------------
-
 if not TEST_DIR.exists():
     raise FileNotFoundError(f"Test dataset not found: {TEST_DIR}")
 
 if not BEST_MODEL.exists():
     raise FileNotFoundError(f"Model file not found: {BEST_MODEL}")
-
-# ------------------------------------------------------------
-# 4. LOAD TEST DATASET
-# ------------------------------------------------------------
 
 print("\nLoading test dataset...")
 
@@ -79,33 +58,20 @@ for index, name in enumerate(class_names):
 
 test_ds = test_ds.prefetch(tf.data.AUTOTUNE)
 
-# ------------------------------------------------------------
-# 5. LOAD TRAINED MODEL
-# ------------------------------------------------------------
-
 print("\nLoading trained model...")
 model = keras.models.load_model(BEST_MODEL)
 print("Model loaded successfully.")
 model.summary()
 
-# Check model output dimension against test classes.
 if model.output_shape[-1] != num_classes:
     raise ValueError(
         f"Model outputs {model.output_shape[-1]} classes, but "
         f"the test dataset contains {num_classes}. Check class mapping."
     )
 
-# ------------------------------------------------------------
-# 6. EVALUATE MODEL
-# ------------------------------------------------------------
-
 print("\nEvaluating model...")
 
 test_loss, test_accuracy = model.evaluate(test_ds, verbose=1)
-
-# ------------------------------------------------------------
-# 7. GENERATE PREDICTIONS
-# ------------------------------------------------------------
 
 print("\nGenerating predictions...")
 
@@ -115,10 +81,6 @@ y_pred = np.argmax(predictions, axis=1)
 
 if len(y_true) != len(y_pred):
     raise RuntimeError("Mismatch between actual labels and predictions.")
-
-# ------------------------------------------------------------
-# 8. OVERALL PERFORMANCE
-# ------------------------------------------------------------
 
 overall_accuracy = accuracy_score(y_true, y_pred)
 
@@ -148,10 +110,6 @@ print(f"Weighted F1-score  : {weighted_f1:.4f}")
 print(f"Test images        : {len(y_true)}")
 print(f"Number of classes  : {num_classes}")
 
-# ------------------------------------------------------------
-# 9. CLASSIFICATION REPORT
-# ------------------------------------------------------------
-
 print("\n" + "=" * 55)
 print("CLASSIFICATION REPORT")
 print("=" * 55)
@@ -180,10 +138,6 @@ report_dict = classification_report(
 
 with open(OUTPUT_DIR / "classification_report.json", "w") as f:
     json.dump(report_dict, f, indent=4)
-
-# ------------------------------------------------------------
-# 10. CONFUSION MATRIX - RAW COUNTS
-# ------------------------------------------------------------
 
 cm = confusion_matrix(
     y_true, y_pred, labels=np.arange(num_classes)
@@ -224,11 +178,6 @@ fig.savefig(
 )
 plt.show()
 plt.close(fig)
-
-# ------------------------------------------------------------
-# 11. NORMALIZED CONFUSION MATRIX
-# ------------------------------------------------------------
-
 row_totals = cm.sum(axis=1, keepdims=True)
 cm_normalized = np.divide(
     cm,
@@ -266,11 +215,6 @@ fig.savefig(
 )
 plt.show()
 plt.close(fig)
-
-# ------------------------------------------------------------
-# 12. PER-CLASS PERFORMANCE
-# ------------------------------------------------------------
-
 class_precision, class_recall, class_f1, class_support = (
     precision_recall_fscore_support(
         y_true,
@@ -304,15 +248,6 @@ for i, class_name in enumerate(class_names):
 
 with open(OUTPUT_DIR / "class_accuracy.json", "w") as f:
     json.dump(class_results, f, indent=4)
-
-# Per-class recall is the fraction of actual images in a class
-# that were correctly classified. It is sometimes called
-# class-wise accuracy, but "recall" is the precise term.
-
-# ------------------------------------------------------------
-# 13. PLANT-WISE PERFORMANCE
-# ------------------------------------------------------------
-
 plant_results = defaultdict(list)
 
 for class_name, metrics in class_results.items():
@@ -330,10 +265,6 @@ for plant, values in sorted(plant_results.items()):
     mean_recall = float(np.mean(values))
     plant_wise_results[plant] = mean_recall
     print(f"{plant:25s}: {mean_recall * 100:.2f}%")
-
-# ------------------------------------------------------------
-# 14. SAVE TEST SUMMARY
-# ------------------------------------------------------------
 
 summary = {
     "model": BEST_MODEL.name,
@@ -355,11 +286,6 @@ summary = {
 
 with open(OUTPUT_DIR / "test_summary.json", "w") as f:
     json.dump(summary, f, indent=4)
-
-# ------------------------------------------------------------
-# 15. COMPLETION
-# ------------------------------------------------------------
-
 print("\n" + "=" * 55)
 print("EVALUATION COMPLETED SUCCESSFULLY")
 print("=" * 55)
