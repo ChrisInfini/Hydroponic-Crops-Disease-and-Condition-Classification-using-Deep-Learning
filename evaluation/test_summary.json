@@ -1,0 +1,27 @@
+{
+  "model": "initial_best.keras",
+  "input_size": [
+    160,
+    160
+  ],
+  "test_images": 5947,
+  "number_of_classes": 30,
+  "test_loss": 0.3618,
+  "test_accuracy": 0.9102,
+  "macro_precision": 0.8734,
+  "macro_recall": 0.8534,
+  "macro_f1_score": 0.851,
+  "weighted_precision": 0.9176,
+  "weighted_recall": 0.9102,
+  "weighted_f1_score": 0.908,
+  "plant_wise_mean_class_recall": {
+    "basil": 1.0,
+    "bell": 0.9647,
+    "cucumber": 0.95,
+    "lettuce": 0.6595,
+    "spinach": 0.7327,
+    "strawberry": 0.994,
+    "tomato": 0.8293
+  },
+  "source": "User-provided Google Colab evaluation output"
+}

@@ -1,0 +1,182 @@
+{
+  "basil_healthy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "support": 600
+  },
+  "basil_insect bite": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "support": 600
+  },
+  "basil_white spots": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "support": 600
+  },
+  "bell_pepper_bacterial spot": {
+    "precision": 0.9658,
+    "recall": 0.9338,
+    "f1_score": 0.9495,
+    "support": 151
+  },
+  "bell_pepper_healthy": {
+    "precision": 0.9333,
+    "recall": 0.9956,
+    "f1_score": 0.9634,
+    "support": 225
+  },
+  "cucumber_anthracnose": {
+    "precision": 0.7692,
+    "recall": 0.8333,
+    "f1_score": 0.8,
+    "support": 24
+  },
+  "cucumber_bacterial wilt": {
+    "precision": 1.0,
+    "recall": 0.9583,
+    "f1_score": 0.9787,
+    "support": 24
+  },
+  "cucumber_belly rot": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "support": 24
+  },
+  "cucumber_downy mildew": {
+    "precision": 0.92,
+    "recall": 0.9583,
+    "f1_score": 0.9388,
+    "support": 24
+  },
+  "cucumber_fresh leaf": {
+    "precision": 0.8571,
+    "recall": 1.0,
+    "f1_score": 0.9231,
+    "support": 24
+  },
+  "lettuce_bacterial": {
+    "precision": 0.5435,
+    "recall": 1.0,
+    "f1_score": 0.7042,
+    "support": 75
+  },
+  "lettuce_fungal": {
+    "precision": 0.9643,
+    "recall": 0.36,
+    "f1_score": 0.5243,
+    "support": 75
+  },
+  "lettuce_healthy": {
+    "precision": 0.9216,
+    "recall": 0.6184,
+    "f1_score": 0.7402,
+    "support": 76
+  },
+  "spinach_anthracnose": {
+    "precision": 0.7,
+    "recall": 0.875,
+    "f1_score": 0.7778,
+    "support": 16
+  },
+  "spinach_bacterial-spot": {
+    "precision": 0.75,
+    "recall": 0.6053,
+    "f1_score": 0.6699,
+    "support": 114
+  },
+  "spinach_downy-mildew": {
+    "precision": 0.6829,
+    "recall": 0.7778,
+    "f1_score": 0.7273,
+    "support": 36
+  },
+  "spinach_healthy-leaf": {
+    "precision": 0.7796,
+    "recall": 0.9052,
+    "f1_score": 0.8377,
+    "support": 211
+  },
+  "spinach_pest-damage": {
+    "precision": 0.75,
+    "recall": 0.5,
+    "f1_score": 0.6,
+    "support": 78
+  },
+  "strawberry_healthy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "support": 69
+  },
+  "strawberry_leaf scorch": {
+    "precision": 1.0,
+    "recall": 0.988,
+    "f1_score": 0.994,
+    "support": 167
+  },
+  "tomato_bacterial spot": {
+    "precision": 0.8342,
+    "recall": 0.9594,
+    "f1_score": 0.8924,
+    "support": 320
+  },
+  "tomato_early blight": {
+    "precision": 0.8119,
+    "recall": 0.5467,
+    "f1_score": 0.6534,
+    "support": 150
+  },
+  "tomato_healthy": {
+    "precision": 0.8659,
+    "recall": 0.9958,
+    "f1_score": 0.9264,
+    "support": 240
+  },
+  "tomato_late blight": {
+    "precision": 0.9331,
+    "recall": 0.8746,
+    "f1_score": 0.9029,
+    "support": 287
+  },
+  "tomato_leaf mold": {
+    "precision": 0.9541,
+    "recall": 0.7222,
+    "f1_score": 0.8221,
+    "support": 144
+  },
+  "tomato_septoria leaf spot": {
+    "precision": 0.8566,
+    "recall": 0.8277,
+    "f1_score": 0.8419,
+    "support": 267
+  },
+  "tomato_target spot": {
+    "precision": 0.7671,
+    "recall": 0.7925,
+    "f1_score": 0.7796,
+    "support": 212
+  },
+  "tomato_tomato mosaic virus": {
+    "precision": 0.9318,
+    "recall": 0.7193,
+    "f1_score": 0.8119,
+    "support": 57
+  },
+  "tomato_tomato yellow leaf curl virus": {
+    "precision": 0.9974,
+    "recall": 0.9578,
+    "f1_score": 0.9772,
+    "support": 805
+  },
+  "tomato_two-spotted spider mite": {
+    "precision": 0.7129,
+    "recall": 0.8968,
+    "f1_score": 0.7944,
+    "support": 252
+  }
+}

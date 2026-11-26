@@ -1,0 +1,41 @@
+CLASSIFICATION REPORT
+=======================================================
+                                      precision    recall  f1-score   support
+
+                       basil_healthy     1.0000    1.0000    1.0000       600
+                   basil_insect bite     1.0000    1.0000    1.0000       600
+                   basil_white spots     1.0000    1.0000    1.0000       600
+          bell_pepper_bacterial spot     0.9658    0.9338    0.9495       151
+                 bell_pepper_healthy     0.9333    0.9956    0.9634       225
+                cucumber_anthracnose     0.7692    0.8333    0.8000        24
+             cucumber_bacterial wilt     1.0000    0.9583    0.9787        24
+                  cucumber_belly rot     1.0000    1.0000    1.0000        24
+               cucumber_downy mildew     0.9200    0.9583    0.9388        24
+                 cucumber_fresh leaf     0.8571    1.0000    0.9231        24
+                   lettuce_bacterial     0.5435    1.0000    0.7042        75
+                      lettuce_fungal     0.9643    0.3600    0.5243        75
+                     lettuce_healthy     0.9216    0.6184    0.7402        76
+                 spinach_anthracnose     0.7000    0.8750    0.7778        16
+              spinach_bacterial-spot     0.7500    0.6053    0.6699       114
+                spinach_downy-mildew     0.6829    0.7778    0.7273        36
+                spinach_healthy-leaf     0.7796    0.9052    0.8377       211
+                 spinach_pest-damage     0.7500    0.5000    0.6000        78
+                  strawberry_healthy     1.0000    1.0000    1.0000        69
+              strawberry_leaf scorch     1.0000    0.9880    0.9940       167
+               tomato_bacterial spot     0.8342    0.9594    0.8924       320
+                 tomato_early blight     0.8119    0.5467    0.6534       150
+                      tomato_healthy     0.8659    0.9958    0.9264       240
+                  tomato_late blight     0.9331    0.8746    0.9029       287
+                    tomato_leaf mold     0.9541    0.7222    0.8221       144
+           tomato_septoria leaf spot     0.8566    0.8277    0.8419       267
+                  tomato_target spot     0.7671    0.7925    0.7796       212
+          tomato_tomato mosaic virus     0.9318    0.7193    0.8119        57
+tomato_tomato yellow leaf curl virus     0.9974    0.9578    0.9772       805
+      tomato_two-spotted spider mite     0.7129    0.8968    0.7944       252
+
+                            accuracy                         0.9102      5947
+                           macro avg     0.8734    0.8534    0.8510      5947
+                        weighted avg     0.9176    0.9102    0.9080      5947
+
+
+=======================================================
